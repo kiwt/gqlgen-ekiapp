@@ -1,0 +1,15 @@
+version: '3'
+
+tasks:
+  # first time only
+  init:
+    cmds:
+      - docker volume create pg-data-eki
+
+  start:
+    cmds:
+      - docker-compose up --build
+
+  delete:
+    cmds:
+      - docker-compose down
