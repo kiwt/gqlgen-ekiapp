@@ -13,3 +13,13 @@ tasks:
   delete:
     cmds:
       - docker-compose down
+
+  gqlgen-init:
+    cmds:
+      - cd graph
+      - gqlgen init
+
+  gqlgen:
+    cmds:
+      - cd graph
+      - gqlgen generate
