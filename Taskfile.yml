@@ -17,7 +17,7 @@ tasks:
   gqlgen-init:
     cmds:
       - cd graph
-      - gqlgen init
+      - go run github.com/99designs/gqlgen init
 
   gqlgen:
     cmds:
