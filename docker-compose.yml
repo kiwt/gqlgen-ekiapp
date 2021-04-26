@@ -1,17 +1,16 @@
 version: "3.5"
 services:
-  postgresql:
-    build: gqlgen
-    container_name: postgre-eki
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_INITDB_ARGS=--encoding=UTF-8
+  db:
+    image: mysql:5.7
+    container_name: gqlgen-eki-mysql
     ports:
-      - "5432:5432"
-    user: root
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: ekiapp
+      MYSQL_USER: ekiapp
+      MYSQL_PASSWORD: ekiapp123
+      TZ: 'Asia/Tokyo'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
-      - pg-data-eki:/var/lib/pgdata
-volumes:
-  pg-data-eki:
-    driver: local
+      - ./mysql/init/:/docker-entrypoint-initdb.d
