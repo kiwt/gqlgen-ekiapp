@@ -63,4 +63,9 @@ CREATE TABLE station_join
     PRIMARY KEY (line_cd, station_cd1, station_cd2)
 );
 
+LOAD DATA INFILE '/docker-entrypoint-initdb.d/company20200619.csv' INTO TABLE company FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
+LOAD DATA INFILE '/docker-entrypoint-initdb.d/join20210312.csv' INTO TABLE station_join FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
+LOAD DATA INFILE '/docker-entrypoint-initdb.d/line20210312free.csv' INTO TABLE line FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
+LOAD DATA INFILE '/docker-entrypoint-initdb.d/station20210312free.csv' INTO TABLE station FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n';
+
 COMMIT;

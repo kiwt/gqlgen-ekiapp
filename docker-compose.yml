@@ -1,16 +1,19 @@
 version: "3.5"
 services:
   db:
+    container_name: ekiapp_db
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: mysql:5.7
-    container_name: gqlgen-eki-mysql
+    restart: always
     ports:
       - 3306:3306
+    volumes:
+      - ./mysql/config/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./mysql/init:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: root123
       MYSQL_DATABASE: ekiapp
       MYSQL_USER: ekiapp
       MYSQL_PASSWORD: ekiapp123
-      TZ: 'Asia/Tokyo'
-    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-    volumes:
-      - ./mysql/init/:/docker-entrypoint-initdb.d

@@ -1,4 +1,0 @@
-mysql -u root -p root123 --local-infile sada -e "LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/company20200619.csv' INTO TABLE company FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n'"
-mysql -u root -p root123 --local-infile sada -e "LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/join20210312.csv' INTO TABLE join FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n'"
-mysql -u root -p root123 --local-infile sada -e "LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/line20210312free.csv' INTO TABLE line FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n'"
-mysql -u root -p root123 --local-infile sada -e "LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/station20210312free.csv' INTO TABLE station FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n'"

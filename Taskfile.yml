@@ -8,7 +8,7 @@ tasks:
 
   start:
     cmds:
-      - docker-compose up --build
+      - docker-compose up -d --build
 
   delete:
     cmds:
