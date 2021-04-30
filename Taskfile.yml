@@ -9,6 +9,10 @@ tasks:
     cmds:
       - docker-compose down
 
+  run:
+    cmds:
+      - go run server.go
+
   gqlgen-init:
     cmds:
       - cd graph

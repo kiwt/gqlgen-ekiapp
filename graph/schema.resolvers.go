@@ -5,17 +5,13 @@ package graph
 
 import (
 	"context"
-	"fmt"
+
 	"go_graphql/gqlgen/graph/generated"
-	"go_graphql/gqlgen/graph/model"
+	"go_graphql/gqlgen/graph/models"
 )
 
-func (r *queryResolver) StationByName(ctx context.Context, stationName *string) ([]*model.Station, error) {
-	panic(fmt.Errorf("not implemented"))
-}
-
-func (r *queryResolver) StationByCd(ctx context.Context, stationCd *int) (*model.Station, error) {
-	panic(fmt.Errorf("not implemented"))
+func (r *queryResolver) StationByCd(ctx context.Context, stationCd *int) (*models.Station, error) {
+	return r.StationByCD(ctx, stationCd)
 }
 
 // Query returns generated.QueryResolver implementation.
