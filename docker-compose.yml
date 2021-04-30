@@ -13,7 +13,6 @@ services:
       - ./mysql/config/my.cnf:/etc/mysql/conf.d/my.cnf
       - ./mysql/init:/docker-entrypoint-initdb.d
     environment:
+      MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: root123
       MYSQL_DATABASE: ekiapp
-      MYSQL_USER: ekiapp
-      MYSQL_PASSWORD: ekiapp123
