@@ -11,7 +11,7 @@ import (
 )
 
 func (r *queryResolver) StationByCd(ctx context.Context, stationCd *int) (*models.Station, error) {
-	return r.StationByCD(ctx, stationCd)
+	return r.getStationByCD(ctx, stationCd)
 }
 
 // Query returns generated.QueryResolver implementation.

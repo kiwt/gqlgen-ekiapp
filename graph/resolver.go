@@ -35,7 +35,7 @@ func init () {
 
 type Resolver struct{}
 
-func (r *Resolver) StationByCD(ctx context.Context, cd *int) (*models.Station, error) {
+func (r *Resolver) getStationByCD(ctx context.Context, cd *int) (*models.Station, error) {
 	station, err := rdb.StationByStationCd(db, *cd)
 	if err != nil {
 		return nil, err
